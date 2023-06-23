@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App5.Views.PanierDetails0">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Picker x:Name="picker"  IsEnabled="False"/>
+            <StackLayout Orientation="Horizontal"  >
+                <RadioButton x:Name="radioSmall"  IsEnabled="False" />
+                <Label  Text="Petite" />
+
+                <RadioButton x:Name="radioMedium"   IsEnabled="False"/>
+                <Label Text="Moyenne" />
+
+                <RadioButton x:Name="radioLarge"  IsEnabled="False" />
+                <Label  Text="Grande" />
+            </StackLayout>
+            <Entry x:Name="adresse"  IsEnabled="False" />
+            <Entry  x:Name="tel"  IsEnabled="False" />
+          
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App5.Views.Supprimer"
+             x:Name="Page">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label x:Name="sortLabel1"
+                       Text="Trier par nom"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       Margin="3"
+                       HorizontalOptions="Start">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SortLabel_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label x:Name="sortLabel2"
+                       Text="Trier par Taille"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       Margin="3"
+                       HorizontalOptions="Start"
+                       Grid.Column="1">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SortLabel_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+            <CollectionView x:Name="collectionView">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Frame Grid.Column="0" BackgroundColor="Transparent" Padding="5">
+                                <Label x:Name="idLabel" Text="{Binding pizzaType}" FontSize="Medium" TextColor="White" VerticalOptions="CenterAndExpand">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={x:Reference Page}, Path=BindingContext.LabelClickedCommand}" CommandParameter="{Binding .}" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Frame>
+                            <Label Grid.Column="1" FontSize="Medium" Text="{Binding pizzaTaille}" VerticalOptions="CenterAndExpand" />
+                            <CheckBox Grid.Column="2" IsChecked="{Binding isSelected}" VerticalOptions="CenterAndExpand" CheckedChanged="CheckBox_CheckedChanged" />
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Text="Valider" Clicked="Button_Clicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

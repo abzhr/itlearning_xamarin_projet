@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App5.Views.AjouterPanier"
+            >
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black" >
+            <Picker x:Name="picker" Title="Sélectionner une option"/>
+
+            <Label Text="Sélectionnez la taille de la pizza :" />
+
+            <StackLayout Orientation="Horizontal">
+                <RadioButton x:Name="radioSmall" CheckedChanged="OnPizzaSizeChanged" />
+                <Label  Text="Petite" />
+
+                <RadioButton x:Name="radioMedium" CheckedChanged="OnPizzaSizeChanged" />
+                <Label Text="Moyenne" />
+
+                <RadioButton x:Name="radioLarge" CheckedChanged="OnPizzaSizeChanged" />
+                <Label  Text="Grande" />
+            </StackLayout>
+
+            <Entry x:Name="adresse" Placeholder="Saisir l'adresse" />
+            <Entry  x:Name="tel" Placeholder="Saisir le numero de tel" />
+            <Button Text="Save" Clicked="SaveButton_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
